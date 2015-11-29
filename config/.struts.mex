@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="default" location="363,570" size="11095,4410">
+    <action name="indexAction_*" location="10880,4040" size="150,125">
+      <result name="index">
+        <resourceEdge source="index" routing="0" target="index.jsp" />
+      </result>
+      <result name="left">
+        <resourceEdge source="left" routing="0" target="left.jsp" />
+      </result>
+      <result name="top">
+        <resourceEdge source="top" routing="0" target="top.jsp" />
+      </result>
+      <result name="right">
+        <resourceEdge source="right" routing="0" target="right.jsp" />
+      </result>
+      <result name="bottom">
+        <resourceEdge source="bottom" routing="0" target="bottom.jsp" />
+      </result>
+    </action>
+    <action name="loginLogoutAction_*" location="10880,4247" size="150,62">
+      <result name="toIndex">
+        <resourceEdge source="toIndex" routing="0" target="index.jsp" />
+      </result>
+      <result name="logout">
+        <resourceEdge source="logout" routing="0" target="logout.jsp" />
+      </result>
+    </action>
+    <action name="personAction_*" location="10145,4226" size="150,104">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="list.jsp" />
+      </result>
+      <result name="saveUI">
+        <resourceEdge source="saveUI" routing="0" target="saveUI.jsp" />
+      </result>
+      <result name="toList" />
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="saveUI.jsp" />
+      </result>
+    </action>
+    <action name="passwordAction_*" location="65,4236" size="150,83">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="saveUI.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="success.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="saveUI.jsp" />
+      </result>
+    </action>
+    <action name="systemNoticeAction_*" location="65,3246" size="150,104">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="list.jsp" />
+      </result>
+      <result name="listInfo">
+        <resourceEdge source="listInfo" routing="0" target="listInfo.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="list.jsp" />
+      </result>
+      <result name="json" />
+    </action>
+    <action name="systemlogAction_*" location="590,3162" size="150,62">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="list.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="list.jsp" />
+      </result>
+    </action>
+    <action name="roleAction_*" location="590,2896" size="150,104">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="list.jsp" />
+      </result>
+      <result name="saveUI">
+        <resourceEdge source="saveUI" routing="0" target="saveUI.jsp" />
+      </result>
+      <result name="setPrivilegeUI">
+        <resourceEdge source="setPrivilegeUI" routing="0" target="setPrivilegeUI.jsp" />
+      </result>
+      <result name="toList" />
+    </action>
+    <action name="departmentAction_*" location="1465,2906" size="150,83">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="list.jsp" />
+      </result>
+      <result name="saveUI">
+        <resourceEdge source="saveUI" routing="0" target="saveUI.jsp" />
+      </result>
+      <result name="toList" />
+    </action>
+    <action name="userAction_*" location="1955,2885" size="150,125">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="list.jsp" />
+      </result>
+      <result name="search">
+        <resourceEdge source="search" routing="0" target="list.jsp" />
+      </result>
+      <result name="saveUI">
+        <resourceEdge source="saveUI" routing="0" target="saveUI.jsp" />
+      </result>
+      <result name="toList" />
+      <result name="json" />
+    </action>
+    <action name="consumerAction_*" location="2445,2906" size="150,83">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="list.jsp" />
+      </result>
+      <result name="saveUI">
+        <resourceEdge source="saveUI" routing="0" target="saveUI.jsp" />
+      </result>
+      <result name="toList" />
+    </action>
+    <action name="supplierAction_*" location="3075,2906" size="150,83">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="list.jsp" />
+      </result>
+      <result name="saveUI">
+        <resourceEdge source="saveUI" routing="0" target="saveUI.jsp" />
+      </result>
+      <result name="toList" />
+    </action>
+    <action name="warehouseAction_*" location="3705,2906" size="150,83">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="list.jsp" />
+      </result>
+      <result name="saveUI">
+        <resourceEdge source="saveUI" routing="0" target="saveUI.jsp" />
+      </result>
+      <result name="toList" />
+    </action>
+    <action name="positionAction_*" location="4335,2906" size="150,83">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="list.jsp" />
+      </result>
+      <result name="saveUI">
+        <resourceEdge source="saveUI" routing="0" target="saveUI.jsp" />
+      </result>
+      <result name="toList" />
+    </action>
+    <action name="categoryAction_*" location="4965,2906" size="150,83">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="list.jsp" />
+      </result>
+      <result name="saveUI">
+        <resourceEdge source="saveUI" routing="0" target="saveUI.jsp" />
+      </result>
+      <result name="toList" />
+    </action>
+    <action name="unitAction_*" location="5560,2906" size="150,83">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="list.jsp" />
+      </result>
+      <result name="saveUI">
+        <resourceEdge source="saveUI" routing="0" target="saveUI.jsp" />
+      </result>
+      <result name="toList" />
+    </action>
+    <action name="materialsAction_*" location="6155,2906" size="150,83">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="list.jsp" />
+      </result>
+      <result name="saveUI">
+        <resourceEdge source="saveUI" routing="0" target="saveUI.jsp" />
+      </result>
+      <result name="toList" />
+    </action>
+  </package>
+  <webResource name="index.jsp" path="/WEB-INF/jsp/indexAction/index.jsp" location="11517,4615" size="150,55" />
+  <webResource name="left.jsp" path="/WEB-INF/jsp/indexAction/left.jsp" location="11524,4440" size="150,55" />
+  <webResource name="top.jsp" path="/WEB-INF/jsp/indexAction/top.jsp" location="11523,4265" size="150,55" />
+  <webResource name="right.jsp" path="/WEB-INF/jsp/indexAction/right.jsp" location="11519,4090" size="150,55" />
+  <webResource name="bottom.jsp" path="/WEB-INF/jsp/indexAction/bottom.jsp" location="11511,3915" size="150,55" />
+  <webResource name="index.jsp" path="/index.jsp" location="11268,5035" size="150,55" />
+  <webResource name="logout.jsp" path="/WEB-INF/jsp/loginLogoutAction/logout.jsp" location="11494,4790" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/personAction/list.jsp" location="10645,5035" size="150,55" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/personAction/saveUI.jsp" location="10948,5140" size="150,55" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/passwordAction/saveUI.jsp" location="55,4790" size="150,55" />
+  <webResource name="success.jsp" path="/WEB-INF/jsp/passwordAction/success.jsp" location="368,5035" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/systemNoticeAction/list.jsp" location="15456,3810" size="150,55" />
+  <webResource name="listInfo.jsp" path="/WEB-INF/jsp/systemNoticeAction/listInfo.jsp" location="10,3810" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/systemlogAction/list.jsp" location="15151,3705" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/roleAction/list.jsp" location="1204,415" size="150,55" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/roleAction/saveUI.jsp" location="912,415" size="150,55" />
+  <webResource name="setPrivilegeUI.jsp" path="/WEB-INF/jsp/roleAction/setPrivilegeUI.jsp" location="577,415" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/departmentAction/list.jsp" location="1776,415" size="150,55" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/departmentAction/saveUI.jsp" location="1450,415" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/userAction/list.jsp" location="14888,3600" size="150,55" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/userAction/saveUI.jsp" location="2101,415" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/consumerAction/list.jsp" location="2762,415" size="150,55" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/consumerAction/saveUI.jsp" location="2435,415" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/supplierAction/list.jsp" location="3397,415" size="150,55" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/supplierAction/saveUI.jsp" location="3070,415" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/warehouseAction/list.jsp" location="4019,415" size="150,55" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/warehouseAction/saveUI.jsp" location="3692,415" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/positionAction/list.jsp" location="4657,415" size="150,55" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/positionAction/saveUI.jsp" location="4330,415" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/categoryAction/list.jsp" location="5285,415" size="150,55" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/categoryAction/saveUI.jsp" location="4958,415" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/unitAction/list.jsp" location="5895,415" size="150,55" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/unitAction/saveUI.jsp" location="5603,415" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/materialsAction/list.jsp" location="6474,415" size="150,55" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/materialsAction/saveUI.jsp" location="6147,415" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/purchaseAction/list.jsp" location="14594,3460" size="150,55" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/purchaseAction/saveUI.jsp" location="6777,415" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/productAction/list.jsp" location="14282,3320" size="150,55" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/productAction/saveUI.jsp" location="7131,415" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/otherInAction/list.jsp" location="13969,3180" size="150,55" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/otherInAction/saveUI.jsp" location="7483,415" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/produceAction/list.jsp" location="13791,2935" size="150,55" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/produceAction/saveUI.jsp" location="7829,415" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/salesAction/list.jsp" location="13486,2795" size="150,55" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/salesAction/saveUI.jsp" location="8189,415" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/otherOutAction/list.jsp" location="13299,2585" size="150,55" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/otherOutAction/saveUI.jsp" location="8528,415" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/physicalAction/list.jsp" location="13127,2270" size="150,55" />
+  <webResource name="listInfo.jsp" path="/WEB-INF/jsp/physicalAction/listInfo.jsp" location="9511,415" size="150,55" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/physicalAction/saveUI.jsp" location="9196,415" size="150,55" />
+  <webResource name="way.jsp" path="/WEB-INF/jsp/physicalAction/way.jsp" location="8889,415" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/adjustmentAction/list.jsp" location="12943,2095" size="150,55" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/adjustmentAction/saveUI.jsp" location="10167,415" size="150,55" />
+  <webResource name="listInfo.jsp" path="/WEB-INF/jsp/adjustmentAction/listInfo.jsp" location="9852,415" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/allocationAction/list.jsp" location="12772,1850" size="150,55" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/allocationAction/saveUI.jsp" location="10521,415" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/realtimeInventoryAction/list.jsp" location="12400,1745" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/sluggishAction/list.jsp" location="12076,1640" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/inventoryWarnAction/list.jsp" location="11883,1465" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/baseDataAction/list.jsp" location="11513,940" size="150,55" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/baseDataAction/saveUI.jsp" location="11501,765" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/abcAnalysisAction/list.jsp" location="11507,1115" size="150,55" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/outboundJournalAction/list.jsp" location="11526,1360" size="150,55" />
+</Struts2Diagram>
+

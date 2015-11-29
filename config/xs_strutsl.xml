@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-body>
+		<!-- 销售订单管理 -->
+		<action name="xsOrderAction_*" class="xsOrderAction"
+			method="{1}">
+			<result name="list">/WEB-INF/jsp/xsOrderAction/list.jsp</result>
+			<result name="saveUI">/WEB-INF/jsp/xsOrderAction/saveUI.jsp</result>
+			<result name="toList" type="redirectAction">xsOrderAction_list</result>
+		</action>
+</xml-body>

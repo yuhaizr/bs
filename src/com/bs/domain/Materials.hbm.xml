@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.bs.domain">
+
+	<class name="Materials" table="materials">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="name" />
+		<property name="description" />
+		<property name="specifications" />
+		<property name="lowestInventory" type="double" />
+		<property name="highestInventory" type="double" />
+		<property name="safeInventory" type="double" />
+		<property name="noAmountOfTime" type="long" />
+
+		<!-- category属性，本类与Category的多对一 -->
+		<many-to-one name="category" class="Category" column="categoryId" />
+
+		
+		
+		
+	</class>
+
+</hibernate-mapping>

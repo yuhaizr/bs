@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 开启动态方法调用 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<!-- 设定为开发模式 -->
+	<constant name="struts.devMode" value="true" />
+	<!-- 指定action的后缀 -->
+	<constant name="struts.action.extension" value="action" />
+	<!-- 指定主题为simple -->
+	<constant name="struts.ui.theme" value="simple" />
+
+	<package name="default" namespace="/" extends="json-default">
+
+		<!-- 配置拦截器 -->
+		<interceptors>
+			<!-- 声明权限拦截器 -->
+			<interceptor name="checkPrivilege"
+				class="com.bs.util.CheckPrivilegeInterceptor" />
+			<!-- 日志拦截器 -->
+			<interceptor name="systemlogInterceptor"
+				class="com.bs.util.SystemlogInterceptor"></interceptor>
+			<!-- 声明拦截器栈 -->
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="checkPrivilege" />
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="systemlogInterceptor">
+					<param name="includeMethods">add,edit,delete,login,logout,setPrivilege,initPassword,audit</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 默认本包中的所有action都要经过myStack这个拦截器栈 -->
+		<default-interceptor-ref name="myStack" />
+
+
+		<!-- 全局result配置 -->
+		<global-results>
+			<result name="loginUI">/WEB-INF/jsp/loginLogoutAction/loginUI.jsp
+			</result>
+			<result name="privilegeError">/privilegeError.jsp</result>
+			<result name="input">/error_404.html</result>
+		</global-results>
+
+
+		<!-- 主页面 -->
+		<action name="indexAction_*" class="indexAction" method="{1}">
+			<result name="index">/WEB-INF/jsp/indexAction/index.jsp</result>
+			<result name="left">/WEB-INF/jsp/indexAction/left.jsp</result>
+			<result name="top">/WEB-INF/jsp/indexAction/top.jsp</result>
+			<result name="right">/WEB-INF/jsp/indexAction/right.jsp</result>
+			<result name="bottom">/WEB-INF/jsp/indexAction/bottom.jsp</result>
+
+		</action>
+
+		<!-- 用户登录注销功能 -->
+		<action name="loginLogoutAction_*" class="loginLogoutAction"
+			method="{1}">
+			<result name="toIndex" type="redirect">/index.jsp</result>
+			<result name="logout">/WEB-INF/jsp/loginLogoutAction/logout.jsp
+			</result>
+		</action>
+
+		<!-- =============================系统维护========================= -->
+		<!-- 个人信息 -->
+		<action name="personAction_*" class="personAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/personAction/list.jsp
+			</result>
+			<result name="saveUI">/WEB-INF/jsp/personAction/saveUI.jsp
+			</result>
+			<result name="toList" type="redirectAction">personAction_list
+			</result>
+			<result name="input">/WEB-INF/jsp/personAction/saveUI.jsp
+			</result>
+		</action>
+
+		<!-- 密码修改 -->
+		<action name="passwordAction_*" class="passwordAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/passwordAction/saveUI.jsp
+			</result>
+			<result name="success">/WEB-INF/jsp/passwordAction/success.jsp
+			</result>
+			<result name="input">/WEB-INF/jsp/passwordAction/saveUI.jsp
+			</result>
+		</action>
+
+		<!-- 系统通知 -->
+		<action name="systemNoticeAction_*" class="systemNoticeAction"
+			method="{1}">
+			<result name="list">/WEB-INF/jsp/systemNoticeAction/list.jsp</result>
+			<result name="listInfo">/WEB-INF/jsp/systemNoticeAction/listInfo.jsp
+			</result>
+			<result name="input">/WEB-INF/jsp/systemNoticeAction/list.jsp</result>
+			<result name="json" type="json">
+				<param name="root">data</param>
+			</result>
+		</action>
+
+		<!-- 系统日志管理 -->
+		<action name="systemlogAction_*" class="systemlogAction"
+			method="{1}">
+			<result name="list">/WEB-INF/jsp/systemlogAction/list.jsp</result>
+			<result name="input">/WEB-INF/jsp/systemlogAction/list.jsp</result>
+		</action>
+
+		<!-- =================================基础资料=========================== -->
+		<!-- 岗位管理 -->
+		<action name="roleAction_*" class="roleAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/roleAction/list.jsp</result>
+			<result name="saveUI">/WEB-INF/jsp/roleAction/saveUI.jsp</result>
+			<result name="setPrivilegeUI">/WEB-INF/jsp/roleAction/setPrivilegeUI.jsp
+			</result>
+			<result name="toList" type="redirectAction">roleAction_list</result>
+		</action>
+
+		<!-- 部门管理 -->
+		<action name="departmentAction_*" class="departmentAction"
+			method="{1}">
+			<result name="list">/WEB-INF/jsp/departmentAction/list.jsp</result>
+			<result name="saveUI">/WEB-INF/jsp/departmentAction/saveUI.jsp</result>
+			<result name="toList" type="redirectAction">departmentAction_list?parentId=${parentId}
+			</result>
+		</action>
+
+		<!-- 用户管理 -->
+		<action name="userAction_*" class="userAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/userAction/list.jsp</result>
+			<result name="search">/WEB-INF/jsp/userAction/list.jsp</result>
+			<result name="saveUI">/WEB-INF/jsp/userAction/saveUI.jsp</result>
+			<result name="toList" type="redirectAction">userAction_list?parentId=${parentId}
+			</result>
+			<result name="json" type="json">
+				<param name="root">data</param>
+			</result>
+		</action>
+
+
+		<!-- 客户管理 -->
+		<action name="consumerAction_*" class="consumerAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/consumerAction/list.jsp</result>
+			<result name="saveUI">/WEB-INF/jsp/consumerAction/saveUI.jsp</result>
+			<result name="toList" type="redirectAction">consumerAction_list</result>
+		</action>
+
+		<!-- 供应商管理 -->
+		<action name="supplierAction_*" class="supplierAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/supplierAction/list.jsp</result>
+			<result name="saveUI">/WEB-INF/jsp/supplierAction/saveUI.jsp</result>
+			<result name="toList" type="redirectAction">supplierAction_list</result>
+		</action>
+
+		<!-- 仓库管理 -->
+		<action name="warehouseAction_*" class="warehouseAction"
+			method="{1}">
+			<result name="list">/WEB-INF/jsp/warehouseAction/list.jsp</result>
+			<result name="saveUI">/WEB-INF/jsp/warehouseAction/saveUI.jsp</result>
+			<result name="toList" type="redirectAction">warehouseAction_list</result>
+		</action>
+
+		<!-- 仓位管理 -->
+		<action name="positionAction_*" class="positionAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/positionAction/list.jsp</result>
+			<result name="saveUI">/WEB-INF/jsp/positionAction/saveUI.jsp</result>
+			<result name="toList" type="redirectAction">positionAction_list</result>
+		</action>
+
+		<!-- 物料类别管理 -->
+		<action name="categoryAction_*" class="categoryAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/categoryAction/list.jsp</result>
+			<result name="saveUI">/WEB-INF/jsp/categoryAction/saveUI.jsp</result>
+			<result name="toList" type="redirectAction">categoryAction_list</result>
+		</action>
+
+		<!-- 计量单位管理 -->
+		<action name="unitAction_*" class="unitAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/unitAction/list.jsp</result>
+			<result name="saveUI">/WEB-INF/jsp/unitAction/saveUI.jsp</result>
+			<result name="toList" type="redirectAction">unitAction_list</result>
+		</action>
+
+		<!-- 物料管理 -->
+		<action name="materialsAction_*" class="materialsAction"
+			method="{1}">
+			<result name="list">/WEB-INF/jsp/materialsAction/list.jsp</result>
+			<result name="saveUI">/WEB-INF/jsp/materialsAction/saveUI.jsp</result>
+			<result name="toList" type="redirectAction">materialsAction_list</result>
+		</action>
+
+		<!-- ============================= 销售业务========================= -->
+		<!--<include file="xs_strutsl.xml"/> -->
+		<!-- 销售订单管理 -->
+		<action name="xsOrderAction_*" class="xsOrderAction"
+			method="{1}">
+			<result name="list">/WEB-INF/jsp/xsOrderAction/list.jsp</result>
+			<result name="saveUI">/WEB-INF/jsp/xsOrderAction/saveUI.jsp</result>
+			<result name="toList" type="redirectAction">xsOrderAction_list</result>
+		</action>	
+	
+	
+	</package>
+	
+</struts>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.bs.domain">
+
+	<class name="Warehouse" table="warehouse">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="name" />
+		<property name="address" />
+		<property name="description" />
+
+
+		<!-- users属性，本类与User的 多对多 -->
+		<set name="users" table="user_warehouse" inverse="true" lazy="false">
+			<key column="warehouseId"></key>
+			<many-to-many class="User" column="userId" />
+		</set>
+
+
+		<!-- positions属性，本类与Position的一对多 -->
+		<set name="positions" cascade="all" lazy="false">
+			<key column="warehouseId"></key>
+			<one-to-many class="Position" />
+		</set>
+		
+		
+	</class>
+
+</hibernate-mapping>
